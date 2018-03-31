@@ -10,7 +10,12 @@ gem 'pg'#, '~> 0.18.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 
+#gem para senha
 gem 'bcrypt', '~> 3.1.7'
+
+#Paginçao 
+gem 'will_paginate', '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

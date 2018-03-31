@@ -8,4 +8,8 @@ get 'about', to: 'pages#about'
 
 resources :articles
 
+#signup é a rota (/signup). users é o controller e new é a action
+get 'signup', to: 'users#new'
+resources :users, except: [:new]
+
 end

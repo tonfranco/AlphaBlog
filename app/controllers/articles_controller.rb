@@ -18,8 +18,6 @@ class ArticlesController < ApplicationController
     def create 
         #debugger
         @article = Article.new(article_params)
-        
-        #Hardcode Temporario 
         @article.user = current_user
         if @article.save
             flash[:success] = "Article was successfuly created.."
@@ -58,7 +56,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-        if current_user != @article.user 
+        if current_user != @article.user and !current_user.admin?
             flash[:danger] = "You can only edit or delete your own article"
             redirect_to root_path
         end
